@@ -1,0 +1,31 @@
+<?php
+session_start();
+if(!$_SESSION['username']) {
+    header('Location: connexion');
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur ma nouvelle page</h1>
+        <hr>
+        <p>Connecté en tant que : <strong><?= $_SESSION['username'] ?></strong></p>
+        <p>Que voulez-vous faire ?</p>
+        <div class="list-group">
+            <a href="utilisateur_liste" class="list-group-item list-group-item-action">Gérer les utilisateur</a>
+            <a href="contact" class="list-group-item list-group-item-action">Formulaire de contact</a>
+        </div>
+    </div>
+</body>
+</html>
