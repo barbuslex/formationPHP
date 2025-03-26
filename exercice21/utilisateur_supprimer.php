@@ -27,7 +27,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
         ];
     }
 
-    session_destroy();
+    unset($_SESSION['username']);
 
     header('Location: index.php?p=utilisateur_liste');
     exit();
