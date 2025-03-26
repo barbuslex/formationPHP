@@ -13,7 +13,7 @@
     <div class="container">
         <h1>Formulaire de connexion</h1>
         <hr>
-        <form>
+        <form method="post" action="traitement_connexion.php">
             <div class="mb-3">
                 <label for="username" class="form-label">Nom d'utilisateur :</label>
                 <input id="username" name="username" type="text" class="form-control">
